@@ -11,4 +11,13 @@ app.use(express.urlencoded({extended: true}));
 app.get("/", (req,res)=>{
     res.render("index")
 })
+app.get("/create", (req,res)=>{
+res.render("create")
+})
+app.get("/hisaab", (req,res)=>{
+    res.render("hisaab")
+    })
+ app.get("/edit",(req,res)=>{
+res.render("edit")
+    })
 app.listen(3000);

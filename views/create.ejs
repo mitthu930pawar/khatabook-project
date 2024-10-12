@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>khatabook</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <main class="w-full h-screen bg-blue-300">
+        <nav class="flex px-10 justify-between py-5 bg-blue-900 font-bold"> 
+            <h3 class="font-extrabold  "> khatabook</h3>
+            <div class="navlinks flex gap-5">
+                <a class="tracking-tight font-bold" href="/">home</a>
+                <a href="/create"> creatre new Hisaab</a>
+            </div>
+        </nav>
+        <div class="px-10">
+            <h3 class="capitalize text-2xl font-serif font-medium mb-5  mt-6 tracking-tight">create new HISAAB</h3>
+            <form class="" action="/createhisaab" method="post">
+                <input type="text" name="title" class="text-md px-3 py-2 w-1/2 mb-5 rounded-md bg-white" placeholder="which kind of hisaab .......">
+                <textarea name="content" id="" rows="5" cols="67" placeholder="rrite content here...." class="block px-3 py-2 resize-none bg-slate-100 rounded-md min-h-96 " ></textarea>
+                <input type="submit" class="block mt-5 px-5 py-2 bg-blue-500 text-white rounded-md" value="createhisaab">
+            </form>
+        </div>
+    </main>
+    
+</body>
+</html>
