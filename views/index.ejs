@@ -5,11 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/public/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-<main class="w-full h-screen bg-zinc-100">
-    <nav class="flex px-10 justify-between py-5 bg-red-900 font-bold"> KHATABOOK</nav>
+<main class="w-full h-screen bg-blue-300">
+    <nav class="flex px-10 justify-between py-5 bg-blue-900 font-bold"> 
+        <h3 class="font-extrabold  "> khatabook</h3>
+        <div class="navlinks flex gap-5">
+            <a class="tracking-tight font-bold" href="/">home</a>
+            <a href="/create"> creatre new Hisaab</a>
+        </div>
+    </nav>
+    <div class="px-14"> 
+        <h3 class="capitalize text-2xl font-medium mb-5 mt-10 tracking-tight"> all hisaab kitaab</h3>
+        <div class="w-fit items-center py-3 mb-3 px-5 gap-20 bg-white flex justify-between rounded-md">
+            <div class="flex gap-4 text-black items-center ">
+                <h3 class="text-2xl">hello</h3>
+                <a href="/hisaab"><i class=" w-6 h-6 text-yellow-50 flex items-center justify-center bg-blue-950 rounded-full ri-arrow-right-line "></i></a>
+            </div>
+            <div class="gap-3 items-center flex ">
+                <a href="/edit"><i class="text-black ri-pencil-line"></i></a>
+                <a href="/delete"><i class="w-6 h-6 text-red-600 flex items-center justify-center bg-white rounded-full ri-delete-bin-line"></i></a>
+            </div>
+        </div>
+        <h3 class="text-zinc-500"> nothing to show , create hisaab to see something</h3>
+    </div>
 </main>
 </body>
 </html>
