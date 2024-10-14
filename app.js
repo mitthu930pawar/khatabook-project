@@ -8,16 +8,22 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.get("/", (req,res)=>{
-    res.render("index")
+app.get("/",(req,res)=>{
+ fs.readdir(`./hisaab`, function(err, files){
+if(err) return res.status(500).send(err);
+res.render("index",{files: files});
+ })
 })
-app.get("/create", (req,res)=>{
-res.render("create")
+app.get("/create",(req,res)=>{
+  res.render("create");
 })
-app.get("/hisaab", (req,res)=>{
-    res.render("hisaab")
-    })
- app.get("/edit",(req,res)=>{
-res.render("edit")
-    })
+app.post("/createhisaab", function(req,res){
+   var currentDate = new Date()
+var date=`${ currentDate.getDate()}-${currentDate.getMonth()+1}-${currentDate.getFullYear()};`
+fs.writeFile(`./hisaab/${date}.txt`,req.body.content, function(err){
+if(err) return res.status(500).send(err);
+res.redirect("/")
+
+})
+})
 app.listen(3000);
