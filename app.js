@@ -24,6 +24,10 @@ app.get("/edit/:filename",function(req,res){
 if(err)return res.status(500).send(err);
 res.render("edit", {filedata , filename: req.params.filename})
   })
+
+  app.post("/update/:filename", function(req,res){
+fs.writeFile(`/hisaab/${req.params.filename}`)
+  })
 })
 
 
