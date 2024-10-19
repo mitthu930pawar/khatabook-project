@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const fs = require("fs")
+const fs = require("fs");
+const { isUtf8 } = require('buffer');
 
 app.set("view engine", "ejs")
 app.use(express.static(path.join(__dirname, "public")));
@@ -20,15 +21,37 @@ app.get("/create",(req,res)=>{
 
 
 app.get("/edit/:filename",function(req,res){
-  fs.readFile(`./hisaab/${req.params.filename}`,"utf-8", function(err,filedata){
-if(err)return res.status(500).send(err);
-res.render("edit", {filedata , filename: req.params.filename})
-  })
-
-  app.post("/update/:filename", function(req,res){
-fs.writeFile(`/hisaab/${req.params.filename}`)
-  })
+  fs.readFile(
+    `./hisaab/${req.params.filename}`,
+    "utf-8", 
+    function(err,filedata){
+if(err) return res.status(500).send(err);
+res.render("edit", {filedata , filename: req.params.filename});
+  });
 })
+
+app.post("/update/:filename",function(req,res){
+  fs.writeFile(`./hisaab/${req.params.filename}`,req.body.content,function(err){
+    if(err) {return res.status(500).send(err)}
+      res.redirect("/")})
+    })
+
+
+    app.get("/hisaab/:filename",function(req,res){
+      fs.readFile(`./hisaab/${req.params.filename}`,"utf-8", function(err,filedata){
+        if(err) return res.status(500).send(err);
+        res.render("hisaab",{filedata,filename: req.params.filename})
+      })
+    })
+
+    app.get("/delete/:filename",function(req,res){
+      fs.unlink(`./hisaab/${req.params.filename}`,function(err){
+        if(err) return res.status(500).send(err);
+        res.redirect("/")
+      })
+    })
+
+  
 
 
 app.post("/createhisaab", function(req,res){

@@ -24,11 +24,11 @@
         <div class=" hisaab w-fit items-center   py-3 mb-3 px-5 gap-20 bg-white flex justify-between rounded-md">
             <div class="flex gap-4 text-black items-center ">
                 <h3 class="text-2xl"><%= file.split(".") %></h3>
-                <a href="/hisaab"><i class=" w-6 h-6 text-yellow-50 flex items-center justify-center bg-blue-950 rounded-full ri-arrow-right-line "></i></a>
+                <a href="/hisaab/<%= file %>"><i class=" w-6 h-6 text-yellow-50 flex items-center justify-center bg-blue-950 rounded-full ri-arrow-right-line "></i></a>
             </div>
             <div class="gap-3 items-center flex ">
                 <a href="/edit/<%= file %>"><i class="text-black ri-pencil-line"></i></a>
-                <a href="/delete"><i class="w-6 h-6 text-red-600 flex items-center justify-center bg-white rounded-full ri-delete-bin-line"></i></a>
+                <a href="/delete/<%= file %>"><i class="w-6 h-6 text-red-600 flex items-center justify-center bg-white rounded-full ri-delete-bin-line"></i></a>
             </div>
         </div>
 

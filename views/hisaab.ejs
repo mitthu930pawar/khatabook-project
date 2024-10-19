@@ -18,9 +18,9 @@
             </div>
         </nav>
         <div class="px-10">
-            <h3 class=" text-2xl font-medium mb-5 mt-10 tracking-tight"> hisaab of <span class="text-blue-950"> 12-10-2024</span> date</h3>
-            <p class="font font-medium text-xl mb-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde veritatis eveniet cumque molestias at accusamus nemo optio fugit ipsum delectus?</p>
-            <a class="text-zinc-950" href="/edit/">Edit this hisaab</a>
+            <h3 class=" text-2xl font-medium mb-5 mt-10 tracking-tight"> hisaab of <span class="text-blue-950"><%= filename.split(".")[0]%> </span></h3>
+            <p class="font font-medium text-xl mb-10"><%= filedata %></p>
+            <a class="text-zinc-950" href="/edit/<%= filename%>">Edit this hisaab</a>
         </div>
     </main>
 </body>
